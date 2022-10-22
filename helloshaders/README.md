@@ -1,0 +1,1 @@
+Copy-paste from https://www.toptal.com/opengl/opengl-tutorial-for-android-building-a-mandelbrot-set-generator to play with shader programming on Android
