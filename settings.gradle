@@ -18,5 +18,3 @@ dependencyResolutionManagement {
 rootProject.name = 'Android-experiments'
 
 include ':helloshaders'
-include ':shaderexample'
-include ':shaderexample2'

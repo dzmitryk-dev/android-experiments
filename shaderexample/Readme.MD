@@ -1,1 +1,0 @@
-Copy of https://github.com/asakaplan/Fractal-Generator project
