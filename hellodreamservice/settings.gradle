@@ -15,9 +15,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = 'Android-experiments'
-
-includeBuild 'helloshaders'
-includeBuild 'whitenoiseapp'
-includeBuild 'hellojetpackcompose'
-includeBuild 'hellodreamservice'
+rootProject.name = 'hellodreamservice'
