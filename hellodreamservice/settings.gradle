@@ -15,4 +15,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = 'hello-dream-service'
+rootProject.name = 'hellodreamservice'
