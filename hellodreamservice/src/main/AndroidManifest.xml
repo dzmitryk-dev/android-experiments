@@ -9,7 +9,7 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.Androidexperiments">
         <activity
-            android:name=".DemoActivity"
+            android:name=".demo.DemoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +18,7 @@
         </activity>
 
         <service
-            android:name=".dreams.TestDream"
+            android:name=".service.HelloDream"
             android:exported="true"
             android:label="Test DayDream"
             android:permission="android.permission.BIND_DREAM_SERVICE">
