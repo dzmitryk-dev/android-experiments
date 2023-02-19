@@ -18,11 +18,14 @@ class Fractal {
         """ precision highp float;
             uniform mat4 uMVPMatrix;
             void main() {  
-            // Transform given position to coordinate space
+              // Transform given position to coordinate space
               vec2 p = (uMVPMatrix * vec4(gl_PointCoord,0,1)).xy;
-              vec2 c = p;  // Set default color to black in HSV
-              vec3 color=vec3(0.0,0.0,0.0); // Use 200 as an arbitrary limit. The higher the number, the slower and more detailed it will be
-              for(int i=0;i<200;i++) {  // Perform z = z^2 + c using p, which represents the real and imaginary parts of z
+              vec2 c = p;  
+              // Set default color to black in HSV
+              vec3 color=vec3(0.0,0.0,0.0); 
+              // Use 200 as an arbitrary limit. The higher the number, the slower and more detailed it will be
+              for(int i=0;i<200;i++) {  
+                  // Perform z = z^2 + c using p, which represents the real and imaginary parts of z
               	  p= vec2(p.x*p.x-p.y*p.y,2.0*p.x*p.y)+c;
                   if (dot(p,p)>4.0){  // colorRegulator continuously increases smoothly by 1 for every additional step it takes to break
                      float colorRegulator = float(i-1)-log(log(length(p)))/log(2.0);  // Set color to a cycling color scheme using the smooth number
@@ -37,15 +40,6 @@ class Fractal {
               gl_FragColor.a=1.0;
             }
         """
-
-//    private val fragmentShaderCode =
-//        """ precision highp float;
-//            uniform mat4 uMVPMatrix;
-//            void main() {  // Transform given position to coordinate space
-//              gl_FragColor.rgb = vec3(0.0, 1.0, 0.0);
-//              gl_FragColor.a=1.0;
-//            }
-//        """
 
     private var mProgram = 0
     private var mPositionHandle = 0
