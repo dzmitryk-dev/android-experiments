@@ -1,7 +1,9 @@
 package com.github.dzkoirn.hellodreamservice.service
 
 import android.service.dreams.DreamService
+import androidx.compose.ui.platform.ComposeView
 import com.github.dzkoirn.hellodreamservice.R
+import com.github.dzkoirn.hellodreamservice.ui.DreamScreenContent
 
 class HelloDream : DreamService() {
 
@@ -11,7 +13,10 @@ class HelloDream : DreamService() {
         isFullscreen = true
         isInteractive = false
 
-        setContentView(R.layout.test_daydream)
+        setContentView(R.layout.hello_daydream)
+        findViewById<ComposeView>(R.id.compose_view).setContent {
+//            DreamScreenContent()
+        }
     }
 
     override fun onDetachedFromWindow() {
