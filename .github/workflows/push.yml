@@ -17,3 +17,5 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: make all
+      - run: echo $JAVA_HOME
+      - run: echo $ANDROID_SDK
