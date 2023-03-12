@@ -1,5 +1,5 @@
 name: Pull request
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Build all projects
 on: 
   pull_request:
     branches:
@@ -11,8 +11,5 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: List files in the repository
-        run: |
-          ls -la ${{ github.workspace }}  
       - run: python3 .buildscripts/pr.py
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "${{ job.status }}."
