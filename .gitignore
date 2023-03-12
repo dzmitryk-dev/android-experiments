@@ -85,4 +85,6 @@ lint/tmp/
 # lint/reports/
 /.idea/
 
-/.buidscripts/__pycache__/
+/__pycache__/
+/.buildsripts/__pycache__/
+.buildsripts/__pycache__/

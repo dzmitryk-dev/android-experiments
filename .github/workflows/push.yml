@@ -1,4 +1,4 @@
-name: Push trigger
+name: Push changes
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -9,5 +9,7 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - run: python3 .buildsripts/push.py
       - run: echo "🍏 This job's status is ${{ job.status }}."
