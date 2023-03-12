@@ -1,0 +1,15 @@
+name: Pull request
+run-name: Build all projects
+on: 
+  pull_request:
+    branches:
+      - 'main' 
+
+jobs:
+  Push-Action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: python3 .buildscripts/pr.py
+      - run: echo "${{ job.status }}."
