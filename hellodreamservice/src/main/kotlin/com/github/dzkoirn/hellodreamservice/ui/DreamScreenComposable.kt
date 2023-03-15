@@ -6,6 +6,7 @@ import android.widget.TextClock
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.material.Text
@@ -13,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -22,10 +24,14 @@ import java.util.TimeZone
 @Composable
 @Preview
 fun DreamScreenContent(imageBitmap: ImageBitmap) {
-    Box {
-        Image(painter = BitmapPainter(image = imageBitmap), contentDescription = null)
+    Box(modifier = Modifier.fillMaxHeight()) {
+        Image(
+            painter = BitmapPainter(image = imageBitmap),
+            contentDescription = "background",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxHeight())
         Column(
-            modifier = Modifier.padding(all = 8.dp),
+            modifier = Modifier.padding(all = 8.dp).align(Alignment.TopEnd),
             horizontalAlignment = Alignment.End
         ) {
             Text(text = "Hello World")

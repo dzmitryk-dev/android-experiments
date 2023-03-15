@@ -10,7 +10,7 @@
         android:theme="@style/Theme.Androidexperiments">
 
         <service
-            android:name=".service.HelloDream"
+            android:name=".service.HelloDreamService"
             android:exported="true"
             android:label="Test DayDream"
             android:permission="android.permission.BIND_DREAM_SERVICE">
