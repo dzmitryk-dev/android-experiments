@@ -20,7 +20,7 @@
         <service
             android:name=".service.HelloDreamService"
             android:exported="true"
-            android:label="Test DayDream"
+            android:label="Hello DayDream"
             android:permission="android.permission.BIND_DREAM_SERVICE">
             <intent-filter>
                 <action android:name="android.service.dreams.DreamService" />
