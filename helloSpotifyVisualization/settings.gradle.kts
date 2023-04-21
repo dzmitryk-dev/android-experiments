@@ -3,6 +3,10 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        flatDir {
+            name = "Local libs"
+            dirs = setOf(File("libs"))
+        }
     }
 }
 dependencyResolutionManagement {
