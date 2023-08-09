@@ -17,12 +17,11 @@ internal class DummyLifeCycleOwner : SavedStateRegistryOwner {
      */
     val isInitialized: Boolean
         get() = true
+    override val lifecycle: Lifecycle
+        get() = mLifecycleRegistry
+
     override val savedStateRegistry: SavedStateRegistry
         get() = mSavedStateRegistryController.savedStateRegistry
-
-    override fun getLifecycle(): Lifecycle {
-        return mLifecycleRegistry
-    }
 
     fun setCurrentState(state: Lifecycle.State) {
         mLifecycleRegistry.currentState = state
