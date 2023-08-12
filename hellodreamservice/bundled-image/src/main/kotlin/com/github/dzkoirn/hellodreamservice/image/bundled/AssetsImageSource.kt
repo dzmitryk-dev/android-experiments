@@ -40,7 +40,7 @@ class AssetsImageSource : ImageSource {
                 val fileName = random.nextInt(imageList.size).let {
                     imageList[it]
                 }
-                emit(loadImage(fileName))
+                emit(loadImage("images/$fileName"))
                 delay(config.interval)
             }
         }

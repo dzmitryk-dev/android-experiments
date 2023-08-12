@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.forEach
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -34,7 +35,7 @@ class DreamModel(
 
     fun start() {
         modelScope.launch {
-            imageSource.image.onEach { mutableWallpaper.postValue(it) }
+            imageSource.image.collect { mutableWallpaper.postValue(it) }
         }
     }
 
