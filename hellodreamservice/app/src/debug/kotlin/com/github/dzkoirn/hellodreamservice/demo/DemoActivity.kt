@@ -7,6 +7,7 @@ import androidx.compose.ui.platform.ComposeView
 import com.github.dzkoirn.hellodreamservice.image.bundled.AssetsImageSource
 import com.github.dzkoirn.hellodreamservice.model.DreamModel
 import com.github.dzkoirn.hellodreamservice.ui.DreamScreenContent
+import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
 class DemoActivity : AppCompatActivity() {
@@ -15,8 +16,7 @@ class DemoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val imageSource =
-            com.github.dzkoirn.hellodreamservice.image.bundled.AssetsImageSource(assets)
+        val imageSource = AssetsImageSource(assets, AssetsImageSource.AssetsImageSourceConfig(1.minutes))
         dreamModel = DreamModel(imageSource, 10.0.seconds.inWholeMilliseconds)
 
         setContentView(ComposeView(this).apply {

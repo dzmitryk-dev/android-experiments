@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.github.dzkoirn.hellodreamservice.image.bundled'
+    namespace 'com.github.dzkoirn.hellodreamservice.contracts'
     compileSdk 34
 
     defaultConfig {
