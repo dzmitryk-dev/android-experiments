@@ -15,4 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = 'hellodreamservice'
+include ':app'
+include ':bundled-image'
+include ':contracts'
