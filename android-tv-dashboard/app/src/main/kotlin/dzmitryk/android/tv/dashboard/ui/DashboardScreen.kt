@@ -19,7 +19,7 @@ import dzmitryk.android.tv.dashboard.ui.widgets.TextClock
 import java.util.TimeZone
 
 @Composable
-fun DreamScreenContent(imageBitmap: ImageBitmap) {
+fun DashboardScreenContent(imageBitmap: ImageBitmap) {
     Box(modifier = Modifier
         .fillMaxHeight()
         .fillMaxWidth()) {
