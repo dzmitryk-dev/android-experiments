@@ -1,0 +1,44 @@
+// ...existing code...
+// Root umbrella build.gradle - minimal shared configuration
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        // Intentionally empty: individual builds manage their plugins
+    }
+}
+
+// Place to add shared configuration if needed
+subprojects {
+    // Example: apply common plugin or configuration
+    // apply plugin: 'java' // uncomment if you want to force java plugin
+}
+// Composite build orchestration tasks
+
+// Helper to create a lifecycle task that depends on a task in every included build
+def compositeTask(String name, String includedTaskPath) {
+    tasks.register(name) { t ->
+        // For each included build, wire the referenced task as a dependency
+        gradle.includedBuilds.each { inc ->
+            t.dependsOn(inc.task(includedTaskPath))
+        }
+        // Also no-op dependsOn for root if it hosts projects in future
+        t.group = 'composite'
+        t.description = "Run ${includedTaskPath} in all included builds"
+    }
+}
+
+// Common aggregate tasks
+compositeTask('cleanAll', ':clean')
+compositeTask('assembleAll', ':assemble')
+compositeTask('buildAll', ':build')
+compositeTask('checkAll', ':check')
+// Lint is provided by Android Gradle Plugin when applicable
+compositeTask('lintAll', ':lint')
+
+// Default task when running from the root without specifying a task
+defaultTasks 'buildAll'
+// ...existing code...

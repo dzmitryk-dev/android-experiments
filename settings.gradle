@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        google()
+    }
+    // Centralize plugin versions for the whole composite build so subprojects can omit version pins
+    plugins {
+        // Using versions compatible with Gradle 8.x
+        id 'com.android.application' version '8.5.0'
+        id 'com.android.library' version '8.5.0'
+        id 'org.jetbrains.kotlin.android' version '1.9.10'
+    }
+}
+
+dependencyResolutionManagement {
+    // Use the fully-qualified enum reference to avoid settings script compile-time resolution issues.
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'android-experiments'
+
+// Keep existing composite included builds (user requested)
+includeBuild 'helloshaders'
+includeBuild 'whitenoiseapp'
+includeBuild 'hellojetpackcompose'
+includeBuild 'hellodreamservice'
+
