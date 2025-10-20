@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        a=new XMLHttpRequest();
+        a.onload=function(){I=JSON.parse(this.responseText);if(window.initData)initData();};
+        a.open('get','/ajax_get_le_data',true);
+        a.send();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCRTFFEBRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DCRTFFEBRL');
+        gtag('set', 'user_properties', {
+            app_type: (typeof window.matchMedia !== 'undefined' && window.matchMedia('(display-mode: standalone)').matches) ? 'standalone' : 'web'
+        });
+        gtag('config', 'G-X8YQQMPY4Q', {send_page_view: false});
+        window._pwGA4PageviewId = ''.concat(Date.now());
+        gtag('event', 'ramp_js', {
+            send_to: 'G-X8YQQMPY4Q',
+            pageview_id: window._pwGA4PageviewId
+        });
+    </script>
+    <script>
+        version=1420;
+        spriteNum=4869;
+        IMAGE_DOMAIN='//i.imgflip.com/';
+        mm=0;
+    </script>
+
+    <style>
+        .i-banner{width:320px;height:50px;display:block;margin:0 auto;overflow:hidden;}
+        @media(min-width:500px){.i-banner{width:468px;height:60px;}}
+        @media(min-width:760px){.i-banner{width:728px;height:90px;}}
+    </style>
+    <link rel="icon" href="/favicon.ico?b"/>
+    <link rel="icon" sizes="96x96" href="/imgflip-icon-96.png"/>
+    <link rel="icon" sizes="180x180" href="/apple-touch-icon.png?c"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?c"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Imgflip">
+    <meta name="theme-color" content="#333"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel='stylesheet' href='//s.imgflip.com/v1420/style.css' media='screen'/>
+    <title>fun Memes &amp; GIFs - Imgflip</title>
+    <meta name="description" content="A place for good ol&#039; fun content that appeals to everyone! Humor, memes, gifs..."/>
+    <link rel='stylesheet' href='//s.imgflip.com/v1420/base.css' media='screen'/>
+
+</head>
+
+<body class="base fixed-header">
+<script>
+    var dm = document.cookie.match(/(^|;\s?)dm=([^;]+)/);
+    dm = dm ? dm[2] : '';
+    if (dm === '1' || (dm === '' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.className += ' darkmode';
+    }
+</script>
+
+<div id="panel-back">
+
+    <div id="panel">
+        <div id="nt-nots-mini" class="darkmode"></div>
+        <a class="nav" href="/">
+            <img id="logo" alt="Imgflip Logo" src="/imgflip_white_96.png">
+            <img id="logo-icon" alt="Imgflip Logo Icon" src="/imgflip-icon-transparent-192.svg">
+        </a>
+
+        <div class="nav menu-wrap" id="nav-make">
+            <div id="nav-make-inner" class="menu-btn nosel down-arrow">Create</div>
+            <div id="make-list" class="menu">
+                <a class="make-item" href="/memegenerator" title="Meme Generator">
+                    <svg width=30 height=30 class="make-icon make-icon-meme">
+                        <g transform="scale(.3)">
+                            <path d="M 20 0 l 30 50 l -50 -10 l 0 -40 z"/>
+                            <path d="M 60 0 l 40 0 l -50 50 z"/>
+                            <path d="M 100 60 l 0 40 l -20 0 l -30 -50 z"/>
+                            <path d="M 40 100 l -40 0 l 50 -50 z"/>
+                        </g>
+                    </svg>
+                    Make a Meme
+                </a>
+                <a class="make-item" href="/gif-maker" title="Animated GIF Maker (from video, youtube, images, etc.)">
+                    <svg class="make-icon make-icon-gif">
+                        <g transform="scale(.3)">
+                            <rect width=66 height=66 x=31 y=3 />
+                            <rect width=66 height=66 x=17 y=17 />
+                            <rect width=66 height=66 x=3 y=31 />
+                            <path d="M 24 50 l 25 14 l -25 14 z"/>
+                        </g>
+                    </svg>
+                    Make a GIF or Short Video
+                </a>
+                <a class="make-item" href="/memetemplates" title="Popular Blank Meme Templates">
+                    <div class="make-icon make-icon-meme-templates"></div>
+                    Meme Templates
+                </a>
+                <a class="make-item" href="/gif-templates" title="Popular Blank GIF Templates">
+                    <svg class="make-icon make-icon-gif-templates" viewBox="0 0 30 30">
+                        <g transform="scale(.3)">
+                            <path d="M 35 30 l 34 20 l -34 20 z"/>
+                        </g>
+                    </svg>
+                    GIF Templates
+                </a>
+            </div>
+        </div>
+
+        <div class="nav menu-wrap" id="u-menu-wrap">
+            <div id="u-menu-btn" class="menu-btn nosel down-arrow">
+                <span id="u-long"></span>
+            </div>
+            <div id="u-menu" class="menu"></div>
+        </div>
+
+        <div id="nt-count" class="display-none"></div>
+
+        <svg width=30 height=30 id="panel-search-icon" class="s-icon" viewBox="0 0 100 100">
+            <path d="M 20 80 l 25 -25"/>
+            <circle r=20 cx=59 cy=41 />
+        </svg>
+
+        <div class="clear"></div>
+    </div>
+
+    <div id="panel-search-back" class="hidden">
+        <div id="panel-search">
+            <form class="s-form" action="/search" method="get">
+                <input id="panel-search-input" name="q" type="text" placeholder="Search memes, gifs, tags, users" autocomplete="off" autocapitalize="off" autocorrect="off"/>
+            </form>
+            <button type="button" class="s-submit l but">
+                <svg width=26 height=26 class="s-icon" viewBox="0 0 100 100">
+                    <path d="M 20 80 l 25 -25"/>
+                    <circle r=20 cx=59 cy=41 />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="panel-offline-msg" class="display-none"></div>
+</div>
+
+<div id="page" class="base clearfix">
+
+    <div id="base-panel" class="clearfix">
+
+        <div class="base-options">
+            <div class="i-select-wrap base-stream-select">
+                <button type="button" class="i-select-btn">fun</button>
+                <div class="i-select-dropdown hidden">
+                    <a class="i-select-link on" href="/m/fun">fun</a>
+                    <a class="i-select-link" href="/m/gaming">gaming</a>
+                    <a class="i-select-link" href="/m/repost">repost</a>
+                    <a class="i-select-link" href="/m/sports">sports</a>
+                    <a class="i-select-link" href="/m/reactiongifs">reactiongifs</a>
+                    <a class="i-select-link" href="/streams">more streams &rsaquo;</a>
+                </div>
+            </div>
+            <div class="base-sort"><a class="base-hot" href="/m/fun">Hot</a><a class="base-latest on" href="/m/fun?sort=latest">New</a><div class="i-select-wrap"><button type="button" class="i-select-btn"></button><div class="i-select-dropdown hidden"><div class="i-select-label">Sort By:</div><a class="i-select-link sort-hot" href="/m/fun">Hot <small></small></a><a class="i-select-link sort-latest on" href="/m/fun?sort=latest">New <small></small></a><a class="i-select-link sort-top" href="/m/fun?sort=top-1d">Top <small>past 24 hours</small></a><a class="i-select-link sort-top" href="/m/fun?sort=top-7d">Top <small>past 7 days</small></a><a class="i-select-link sort-top" href="/m/fun?sort=top-30d">Top <small>past 30 days</small></a><div class="i-select-separator"></div><a class="i-select-link" href="/m/fun?sort=top-2025-09">Top <small>September</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-08">Top <small>August</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-07">Top <small>July</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-06">Top <small>June</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-05">Top <small>May</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-04">Top <small>April</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-03">Top <small>March</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-02">Top <small>February</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2025-01">Top <small>January</small></a><a class="i-select-link" href="/m/fun?sort=top-2025">Top <small>2025</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2024-12">Top <small>Dec. 2024</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2024-11">Top <small>Nov. 2024</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2024-10">Top <small>Oct. 2024</small></a><a class="i-select-link" href="/m/fun?sort=top-2024">Top <small>2024</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2023">Top <small>2023</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2022">Top <small>2022</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2021">Top <small>2021</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2020">Top <small>2020</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2019">Top <small>2019</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2018">Top <small>2018</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2017">Top <small>2017</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2016">Top <small>2016</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2015">Top <small>2015</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2014">Top <small>2014</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-2013">Top <small>2013</small></a><a class="i-select-link display-none" href="/m/fun?sort=top-century-21">Top <small>21st Century</small></a><div class="i-select-more-btn down-arrow">more</div></div></div></div>
+            <button type="button" class="base-toggle-more l but down-arrow"></button>
+
+            <button type="button" class="check-wrap check-red" id="safe-button" title="Whether to display not-safe-for-work images"><svg viewBox="0 0 10 10"><path d="M2,5l2,3l4,-6"/></svg><span class="check-text">NSFW</span></button>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+
+
+    <div class="stream-description">A place for good ol&#039; fun content that appeals to everyone! Humor, memes, gifs, and kittens are all welcome here. Reposts and politics are not welcome (try &quot;repost&quot; or &quot;politics&quot; instead).</div>
+
+    <div id="base-right">
+        <div class="base-create ibox">
+            <div class="stream-title">fun</div>
+            <button type="button" class="stream-unfollow-btn lb but hidden" data-id="1374" title="Click to unfollow">Following</button>
+            <button type="button" class="stream-follow-btn b but" data-id="1374">Follow</button>
+            <div class="base-create-wrap">
+                To post images in this stream, please <button type="button" class="a show-login">login</button>.
+            </div>
+            <a href="/create-stream" class="stream-create-btn l but">Create your own stream</a>
+        </div>
+
+        <div id="base-top-memes" class="ibox">
+            <h2>Popular Memes</h2>
+            <a class="base-top-meme" href="/meme/178433874/You-know-Im-something-of-a--myself">
+                <table><tr>
+                    <td><img class="base-top-meme-img" alt="You know, I&#039;m something of a _ myself Meme" src="//i.imgflip.com/2/2y8ggi.jpg"/></td>
+                    <td><div class="base-top-meme-label">You know, I&#039;m something of a _ myself</div></td>
+                </tr></table>
+            </a>
+            <a class="base-top-meme" href="/meme/This-Is-Fine">
+                <table><tr>
+                    <td><img class="base-top-meme-img" alt="This Is Fine Meme" src="//i.imgflip.com/2/wxica.jpg"/></td>
+                    <td><div class="base-top-meme-label">This Is Fine</div></td>
+                </tr></table>
+            </a>
+            <a class="base-top-meme" href="/meme/278525960/Never-ask-a-woman-her-age">
+                <table><tr>
+                    <td><img class="base-top-meme-img" alt="Never ask a woman her age Meme" src="//i.imgflip.com/2/4lts08.jpg"/></td>
+                    <td><div class="base-top-meme-label">Never ask a woman her age</div></td>
+                </tr></table>
+            </a>
+            <a class="base-all-memes-link l but" href="/memetemplates">All Memes</a>
+        </div>
+        <div id="leaderboard" class="ibox">
+            <h2>Leaderboard <small>(past 7 days)</small></h2>
+            <div id="leaders">
+                <a class='row' href='/user/Polaris.' tabindex="999"><div class='fr'>141286</div><div class='u-username'>Polaris.</div></a>
+                <a class='row' href='/user/.Eren.' tabindex="999"><div class='fr'>117210</div><div class='u-username'>.Eren.</div></a>
+                <a class='row' href='/user/ChronolinthComics' tabindex="999"><div class='fr'>95453</div><div class='u-username'>ChronolinthComics</div></a>
+                <a class='row' href='/user/ToadyTheToad' tabindex="999"><div class='fr'>87949</div><div class='u-username'>ToadyTheToad</div></a>
+                <a class='row' href='/user/AwesomeBadassF_ckingEvilPumpkin' tabindex="999"><div class='fr'>87188</div><div class='u-username'>AwesomeBadassF_ckingEvilPumpkin</div></a>
+                <a class='row' href='/user/AmericanViking' tabindex="999"><div class='fr'>84137</div><div class='u-username'>AmericanViking</div></a>
+                <a class='row' href='/user/PhilyaKotGames' tabindex="999"><div class='fr'>79993</div><div class='u-username'>PhilyaKotGames</div></a>
+                <a class='row' href='/user/Mack-The-Knife' tabindex="999"><div class='fr'>74623</div><div class='u-username'>Mack-The-Knife</div></a>
+                <a class='row' href='/user/M1das_OW2' tabindex="999"><div class='fr'>72603</div><div class='u-username'>M1das_OW2</div></a>
+                <a class='row' href='/user/___MOEBIAN_SIXTH___' tabindex="999"><div class='fr'>63644</div><div class='u-username'>___MOEBIAN_SIXTH___</div></a>
+                <div class="clear"></div>
+            </div>
+            <p style="font-size:11px">You earn points when your submitted images or comments are upvoted.</p>
+            <p><a href="/topusers" tabindex="999">All time top users</a></p>
+        </div>
+
+        <div id="base-pro" class="ibox">
+            <h2>Imgflip Pro</h2>
+            <ul>
+                <li>AI creation tools & better GIFs</li>
+                <li>No ads</li>
+                <li>Custom 6x6 profile icon and new colors</li>
+                <li>Your images jump to the top of approval queues</li>
+            </ul>
+            <a href="/pro-basic?from=base" class="base-pro-btn b but">Go Pro</a>
+        </div>
+    </div>
+
+    <div id="base-left">
+        <div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kxw1'>sarcasticat</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kxw1' style='padding-bottom:150%'><img class='base-img' src='//i.imgflip.com/a8kxw1.jpg' alt='sarcasticat | SARCASTICAT  KNOWS
+YOU&#039;RE  FULL  OF  IT | image tagged in sarcasm | made w/ Imgflip meme maker'/></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/kayrobin'>kayrobin</a></div><div class='base-view-count'>8 views</div><div class='base-vote clearfix' data-iid='619075729'><button type='button' class='img-flag-btn but' data-iid='619075729' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kxw1' data-ext='jpg' data-title='sarcasticat' data-generator='meme' data-w='449' data-h='674'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div>
+            <div class="clear"></div>
+            <div class="banner-ad base-ad-top"></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8l17f'>Why Do you always wear that mask?</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8l17f' style='padding-bottom:107.5%'><img class='base-img' src='//i.imgflip.com/a8l17f.jpg' alt='Why Do you always wear that mask? | DREAM | image tagged in why do you always wear that mask | made w/ Imgflip meme maker'/></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/misteriosoguayff'>misteriosoguayff</a></div><div class='base-view-count'>8 views</div><div class='base-vote clearfix' data-iid='619080027'><button type='button' class='img-flag-btn but' data-iid='619080027' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8l17f' data-ext='jpg' data-title='Why Do you always wear that mask?' data-generator='meme' data-w='500' data-h='538'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kznx'>Tuesday time!!</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kznx' style='padding-bottom:75%'><img class='base-img' src='//i.imgflip.com/a8kznx.jpg' alt='Tuesday time!! | YEEEEEEEEAAAAAAAAAHHHH!!!! ITS TIME FOR TUESDAY! | image tagged in memes | made w/ Imgflip meme maker'/></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/CoolguyMcSwaggy'>CoolguyMcSwaggy</a></div><div class='base-view-count'>19 views</div><div class='base-vote clearfix' data-iid='619078029'><button type='button' class='img-flag-btn but' data-iid='619078029' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kznx' data-ext='jpg' data-title='Tuesday time!!' data-generator='meme' data-w='620' data-h='465'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kz4e'>One big threat!</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kz4e' style='padding-bottom:90%'><img class='base-img' src='//i.imgflip.com/a8kz4e.jpg' alt='One big threat! | ME; MY LITTLE BROTHER; IS THIS A THREAT TO SOCIETY? | image tagged in memes,is this a pigeon | made w/ Imgflip meme maker'/></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/CoolguyMcSwaggy'>CoolguyMcSwaggy</a></div><div class='base-view-count'>24 views</div><div class='base-vote clearfix' data-iid='619077326'><button type='button' class='img-flag-btn but' data-iid='619077326' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kz4e' data-ext='jpg' data-title='One big threat!' data-generator='meme' data-w='556' data-h='500'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kz1h'>good vs evil</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kz1h' style='padding-bottom:89.772727272727%'><img class='base-img' src='//i.imgflip.com/a8kz1h.jpg' alt='good vs evil | KINDERGARTEN TEACHERS; MIDDLE SCHOOL TEACHERS | image tagged in good vs evil | made w/ Imgflip meme maker'/></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/Mememaster10230303'>Mememaster10230303</a></div><div class='base-view-count'>12 views</div><div class='base-vote clearfix' data-iid='619077221'><button type='button' class='img-flag-btn but' data-iid='619077221' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kz1h' data-ext='jpg' data-title='good vs evil' data-generator='meme' data-w='557' data-h='500'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kyye'>Burning Spongebob</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kyye' style='padding-bottom:137.72727272727%'><noscript><img class='base-img' src='//i.imgflip.com/a8kyye.jpg' alt='Burning Spongebob | people who pronounce gif as jif immediately being sent to the sixth layer of hell after meeting god and calling him jod | image tagged in burning spongebob | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/a8kyye.jpg' data-alt='Burning Spongebob | people who pronounce gif as jif immediately being sent to the sixth layer of hell after meeting god and calling him jod | image tagged in burning spongebob | made w/ Imgflip meme maker' style='width:440px;height:606px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/therealchaosguy'>therealchaosguy</a></div><div class='base-view-count'>10 views</div><div class='base-vote clearfix' data-iid='619077110'><button type='button' class='img-flag-btn but' data-iid='619077110' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kyye' data-ext='jpg' data-title='Burning Spongebob' data-generator='meme' data-w='500' data-h='689'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kxri'>Monika t pose</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kxri' style='padding-bottom:122.04545454545%'><noscript><img class='base-img' src='//i.imgflip.com/a8kxri.jpg' alt='Monika t pose | THE REST OF THE FRIEND GROUP READY TO RUIN HIS CHANCES; THE PUNCHING BAG OF THE FRIEND GROUP ABOUT TO SOMEHOW PULL A 10/10 | image tagged in monika t pose | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/a8kxri.jpg' data-alt='Monika t pose | THE REST OF THE FRIEND GROUP READY TO RUIN HIS CHANCES; THE PUNCHING BAG OF THE FRIEND GROUP ABOUT TO SOMEHOW PULL A 10/10 | image tagged in monika t pose | made w/ Imgflip meme maker' style='width:440px;height:537px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/ieatpeopleYIXI'>ieatpeopleYIXI</a></div><div class='base-view-count'>10 views</div><div class='base-vote clearfix' data-iid='619075566'><button type='button' class='img-flag-btn but' data-iid='619075566' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kxri' data-ext='jpg' data-title='Monika t pose' data-generator='meme' data-w='500' data-h='610'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kxuv'>SCARY NIGHTS PREDICTED THE FNAF MOVIE</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kxuv' style='padding-bottom:100.68181818182%'><noscript><img class='base-img' src='//i.imgflip.com/a8kxuv.jpg' alt='SCARY NIGHTS PREDICTED THE FNAF MOVIE | image tagged in be careful who you call ugly in middle school | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/a8kxuv.jpg' data-alt='SCARY NIGHTS PREDICTED THE FNAF MOVIE | image tagged in be careful who you call ugly in middle school | made w/ Imgflip meme maker' style='width:440px;height:443px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/ToassAndrassin'>ToassAndrassin</a></div><div class='base-view-count'>9 views</div><div class='base-vote clearfix' data-iid='619075687'><button type='button' class='img-flag-btn but' data-iid='619075687' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kxuv' data-ext='jpg' data-title='SCARY NIGHTS PREDICTED THE FNAF MOVIE' data-generator='meme' data-w='500' data-h='503'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/9swo9t'>It’s true</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/9swo9t' style='padding-bottom:75%'><noscript><img class='base-img' src='//i.imgflip.com/9swo9t.jpg' alt='It’s true | DID YOU KNOW, YOU CAN EASILY STOP ANYTHING JUST BY NOT DOING IT? | image tagged in fun fact with ena,ena | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/9swo9t.jpg' data-alt='It’s true | DID YOU KNOW, YOU CAN EASILY STOP ANYTHING JUST BY NOT DOING IT? | image tagged in fun fact with ena,ena | made w/ Imgflip meme maker' style='width:440px;height:330px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/GamerZade'>GamerZade</a></div><div class='base-view-count'>24 views</div><div class='base-vote clearfix' data-iid='592749281'><button type='button' class='img-flag-btn but' data-iid='592749281' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='9swo9t' data-ext='jpg' data-title='It’s true' data-generator='meme' data-w='577' data-h='433'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><div class='base-nsfw-msg'>Check the NSFW checkbox to enable not-safe-for-work images</div></div></div><div class='base-info'><div class='base-flag'>NSFW</div><div class='base-author'>by <a class='u-username' href='/user/kingdie'>kingdie</a></div><div class='base-view-count'>8 views</div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kv88'>We are not the same</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kv88' style='padding-bottom:142.72727272727%'><noscript><img class='base-img' src='//i.imgflip.com/a8kv88.jpg' alt='We are not the same | I ORDER LARGE PORTIONS SO I CAN HAVE 1 MEAL NOW AND 1 TOMORROW; YOU ORDER LARGE PORTIONS COS YOUR MOM | image tagged in gus fring we are not the same | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/a8kv88.jpg' data-alt='We are not the same | I ORDER LARGE PORTIONS SO I CAN HAVE 1 MEAL NOW AND 1 TOMORROW; YOU ORDER LARGE PORTIONS COS YOUR MOM | image tagged in gus fring we are not the same | made w/ Imgflip meme maker' style='width:440px;height:628px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/Patat_man'>Patat_man</a></div><div class='base-view-count'>13 views</div><div class='base-vote clearfix' data-iid='619072280'><button type='button' class='img-flag-btn but' data-iid='619072280' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kv88' data-ext='jpg' data-title='We are not the same' data-generator='meme' data-w='500' data-h='714'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8ibrt'>This Is Where I&#039;d Put My Trophy If I Had One</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8ibrt' style='padding-bottom:139.09090909091%'><noscript><img class='base-img' src='//i.imgflip.com/a8ibrt.jpg' alt='This Is Where I&#039;d Put My Trophy If I Had One | THIS IS WERE I’D PUT ALL MY GOOD MOVIES IN 2025; DISNEY; IF I HAD ANY | image tagged in memes,this is where i&#039;d put my trophy if i had one | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/a8ibrt.jpg' data-alt='This Is Where I&#039;d Put My Trophy If I Had One | THIS IS WERE I’D PUT ALL MY GOOD MOVIES IN 2025; DISNEY; IF I HAD ANY | image tagged in memes,this is where i&#039;d put my trophy if i had one | made w/ Imgflip meme maker' style='width:440px;height:612px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/SawyerBrattain'>SawyerBrattain</a></div><div class='base-view-count'>33 views</div><div class='base-vote clearfix' data-iid='618953753'><button type='button' class='img-flag-btn but' data-iid='618953753' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8ibrt' data-ext='jpg' data-title='This Is Where I&#039;d Put My Trophy If I Had One' data-generator='meme' data-w='500' data-h='696'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='base-unit clearfix'><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><div class='base-nsfw-msg'>Check the NSFW checkbox to enable not-safe-for-work images</div></div></div><div class='base-info'><div class='base-flag'>NSFW</div><div class='base-author'>by <a class='u-username' href='/user/Dublinlad3740'>Dublinlad3740</a></div><div class='base-view-count'>7 views</div></div></div><div class='base-unit clearfix'><h2 class='base-unit-title'><a href='/i/a8kswa'>It always is like that.</a></h2><div class='base-img-wrap-wrap'><div class='base-img-wrap' style='width:440px'><a class='base-img-link' href='/i/a8kswa' style='padding-bottom:55.909090909091%'><noscript><img class='base-img' src='//i.imgflip.com/a8kswa.jpg' alt='It always is like that. | ME AFTER WAKING UP THE NEXT DAY AND REALIZING I NEVER DID MY HOMEWORK | image tagged in ragatha got shot,the amazing digital circus | made w/ Imgflip meme maker'/></noscript><div class='base-img' data-src='//i.imgflip.com/a8kswa.jpg' data-alt='It always is like that. | ME AFTER WAKING UP THE NEXT DAY AND REALIZING I NEVER DID MY HOMEWORK | image tagged in ragatha got shot,the amazing digital circus | made w/ Imgflip meme maker' style='width:440px;height:246px'></div></a></div></div><div class='base-info'><div class='base-author'>by <a class='u-username' href='/user/GamerZade'>GamerZade</a></div><div class='base-view-count'>19 views</div><div class='base-vote clearfix' data-iid='619069258'><button type='button' class='img-flag-btn but' data-iid='619069258' title='Flag this image'><div class='img-flag-top'></div><div class='img-flag-bottom'></div></button><button type='button' class='img-share shr-open-btn but' data-id='a8kswa' data-ext='jpg' data-title='It always is like that.' data-generator='meme' data-w='894' data-h='500'>share<svg class='img-share-icon' viewBox='0 0 100 100'><path d='M80 20l-60 30l60 30'/><circle r=14 cx=80 cy=20 /><circle r=14 cx=20 cy=50 /><circle r=14 cx=80 cy=80 /></svg></button><button type='button' class='but img-up -up'></button><button type='button' class='but img-down -down'></button></div></div></div><div class='pager'><a class='pager-first l but' href='/m/fun?sort=latest'>First</a><a class='pager-next l but' href='/m/fun?sort=latest&after=a8kswa'>Next &rsaquo;</a></div>	</div>
+
+
+</div>
+
+<div id="footer">
+    <div id="footer-nav">
+        <a href="/pro?from=footer">Imgflip Pro</a>
+        <a href="/gif-maker">GIF Maker</a>
+        <a href="/memegenerator">Meme Generator</a>
+        <a href="/memetemplates">Blank Meme Templates</a>
+        <a href="/gif-templates">GIF Templates</a>
+        <a href="/chart-maker">Chart Maker</a>
+        <a href="/demotivational-maker">Demotivational Maker</a>
+        <a href="/image-resizer">Image Resizer</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/api">API</a>
+        <a href="/slack">Slack App</a>
+        <a href="/request_removal">Request Image Removal</a>
+        <span id="do-not-sell-btn" class="qc-ccpa-persistent-link"></span>
+    </div>
+    <div id="findUs">
+        <a id="on-fb" href="https://www.facebook.com/imgflip">Facebook</a>
+        <a id="on-tw" href="https://twitter.com/imgflip">Twitter</a>
+        <a id="on-android" href="https://play.google.com/store/apps/details?id=com.imgflip.twa">Android App</a>
+        <a id="on-chrome" href="https://chrome.google.com/webstore/detail/imgflip-quick-create/ipdbhnffahpohpdkcelabahpmlheidff">Chrome Extension</a>
+    </div>
+    <div id="footline">
+        Empowering creativity on teh interwebz
+        <br/>Imgflip LLC 2025		<br/><a id="hiring-link" href="/careers">Are you a web developer?</a>
+    </div>
+
+</div>
+
+<script src="https://s.imgflip.com/jq.js"></script>
+
+<script crossorigin='anonymous' src='//s.imgflip.com/v1420/common.js'></script>
+<script>
+    initHome();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"98bea8a8b87ebf42","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"536a0d68222b4b1eb170795691f8cec4"}' crossorigin="anonymous"></script>
+</body>
