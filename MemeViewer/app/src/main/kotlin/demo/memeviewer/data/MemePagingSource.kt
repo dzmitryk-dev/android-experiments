@@ -2,6 +2,7 @@ package demo.memeviewer.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import demo.memeviewer.di.IoDispatcher
 import demo.memeviewer.model.MemeData
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -12,7 +13,7 @@ private const val START_URL = "https://imgflip.com/m/fun?sort=latest"
 internal class MemePagingSource @Inject constructor(
     private val dataSource: DataSource,
     private val parser: PageParser,
-    private val coroutineDispatcher: CoroutineDispatcher,
+    @IoDispatcher private val coroutineDispatcher: CoroutineDispatcher,
 ) : PagingSource<String, MemeData>() {
 
     override fun getRefreshKey(state: PagingState<String, MemeData>): String? {
