@@ -27,6 +27,6 @@ rootProject.name = 'android-experiments'
 // Keep existing composite included builds (user requested)
 includeBuild 'helloshaders'
 includeBuild 'whitenoiseapp'
-includeBuild 'hellojetpackcompose'
+//includeBuild 'hellojetpackcompose'
 includeBuild 'hellodreamservice'
 

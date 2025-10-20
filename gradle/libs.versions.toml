@@ -1,13 +1,12 @@
 # Centralized version catalog for android-experiments
 
 [versions]
-kotlin = "1.9.22"
-agp = "8.6.0"
-gradle = "9.1.0"
-androidx-core = "1.9.0"
-appcompat = "1.6.1"
-material = "1.7.0"
-constraintlayout = "2.1.4"
+kotlin = "2.2.20"
+agp = "8.13.0"
+androidx-core = "1.17.0"
+appcompat = "1.7.1"
+material = "1.13.0"
+constraintlayout = "2.2.1"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
