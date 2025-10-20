@@ -20,7 +20,7 @@ internal class PageParser @Inject constructor() {
 
         val url = content.selectFirst("div.pager a.pager-next.l.but")?.attr("href")
 
-        return PageData(memes = memes, nextPageUrl = url)
+        return PageData(memes = memes, nextPageUrl = "https://imgflip.com$url")
     }
 
     private fun parseElement(element: Element): MemeData? {
