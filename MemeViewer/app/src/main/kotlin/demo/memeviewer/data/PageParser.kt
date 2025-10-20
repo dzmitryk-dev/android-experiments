@@ -2,11 +2,13 @@ package demo.memeviewer.data
 
 import demo.memeviewer.model.MemeData
 import demo.memeviewer.model.PageData
+import org.jetbrains.annotations.ApiStatus
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import timber.log.Timber
+import javax.inject.Inject
 
-internal class PageParser {
+internal class PageParser @Inject constructor() {
 
     fun parse(page: Document): PageData {
         val content = page.selectFirst("div#base-left") ?: run {
