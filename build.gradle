@@ -11,12 +11,13 @@ buildscript {
     }
 }
 
-// Place to add shared configuration if needed
-subprojects {
-    // Example: apply common plugin or configuration
-    // apply plugin: 'java' // uncomment if you want to force java plugin
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.ksp) apply false
 }
-// Composite build orchestration tasks
 
 // Helper to create a lifecycle task that depends on a task in every included build
 def compositeTask(String name, String includedTaskPath) {
