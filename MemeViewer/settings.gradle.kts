@@ -20,5 +20,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MemeViewer"
-
-include(":app")
