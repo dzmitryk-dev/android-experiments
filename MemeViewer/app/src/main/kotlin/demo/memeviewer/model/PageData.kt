@@ -5,19 +5,24 @@ data class PageData(
     val nextPageUrl: String?
 )
 
-sealed class MemeData {
+sealed class MemeData() {
 
     data class Image(
         val title: String,
         val creator: String,
+        val link: String,
+        val viewCount: String,
         val imageUrl: String,
     ) : MemeData()
 
     data class Video(
         val title: String,
         val creator: String,
+        val link: String,
+        val viewCount: String,
         val videoUrl: String,
         val posterUrl: String,
+        val gifUrl: String,
     ) : MemeData()
 
     data object NSFW : MemeData()

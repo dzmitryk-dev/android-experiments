@@ -4,13 +4,6 @@ pluginManagement {
         mavenCentral()
         google()
     }
-    // Centralize plugin versions for the whole composite build so subprojects can omit version pins
-    plugins {
-        // Using versions compatible with Gradle 8.x
-        id 'com.android.application' version '8.5.0'
-        id 'com.android.library' version '8.5.0'
-        id 'org.jetbrains.kotlin.android' version '1.9.10'
-    }
 }
 
 dependencyResolutionManagement {
@@ -29,4 +22,5 @@ includeBuild 'helloshaders'
 includeBuild 'whitenoiseapp'
 //includeBuild 'hellojetpackcompose'
 includeBuild 'hellodreamservice'
+includeBuild 'MemeViewer'
 
