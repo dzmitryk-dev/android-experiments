@@ -1,0 +1,23 @@
+# Centralized version catalog for android-experiments
+
+[versions]
+kotlin = "2.2.20"
+agp = "8.13.0"
+androidx-core = "1.17.0"
+appcompat = "1.7.1"
+material = "1.13.0"
+constraintlayout = "2.2.1"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+[libraries]
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+
+# You can add more library aliases here as needed.
+

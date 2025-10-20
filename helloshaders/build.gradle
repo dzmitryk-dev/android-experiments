@@ -1,15 +1,6 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        maven { setUrl("https://plugins.gradle.org/m2/") }
-        gradlePluginPortal()
-    }
-}
-
 plugins {
-    id 'com.android.application' version '7.3.1'
-    id 'org.jetbrains.kotlin.android' version '1.7.20'
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
@@ -42,4 +33,3 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:1.6.1"
 }
-
