@@ -11,7 +11,7 @@ class PageParserTest {
     private val testParser = PageParser()
 
     private val expectedPageData = PageData(
-        nextPageUrl = "/m/fun?sort=latest&after=a8kswa",
+        nextPageUrl = "https://imgflip.com/m/fun?sort=latest&after=a8kswa",
         memes = listOf(
             MemeData.Image(
                 title = "sarcasticat",
