@@ -1,15 +1,29 @@
 name: Push changes
 run-name: Build project
-on: [push]
+on: 
+  push:
+    branches:
+      - '**'
+
 jobs:
-  Push-Action:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
         with:
-          fetch-depth: 2
-      - run: python3 .buildscripts/push.py
-      - run: echo "${{ job.status }}."
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Build all projects
+        run: ./gradlew buildAll --no-daemon --stacktrace
+      
+      - name: Build status
+        run: echo "Build completed with status ${{ job.status }}"
