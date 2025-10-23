@@ -13,6 +13,7 @@ import dzmitryk.codepractice.recyclerview.R
 import dzmitryk.codepractice.recyclerview.databinding.FragmentMainBinding
 import dzmitryk.codepractice.recyclerview.databinding.ItemStringBinding
 import dzmitryk.codepractice.recyclerview.utils.ArrayAdapter
+import dzmitryk.codepractice.recyclerview.utils.SpacingItemDecorator
 
 class MainFragment : Fragment() {
 
@@ -43,6 +44,7 @@ class MainFragment : Fragment() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             setAdapter(adapter)
+            addItemDecoration(SpacingItemDecorator(16))
         }
     }
 

@@ -1,6 +1,5 @@
 package dzmitryk.codepractice.recyclerview.ui.filter
 
-import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import dzmitryk.codepractice.recyclerview.databinding.FragmentFilterBinding
 import dzmitryk.codepractice.recyclerview.databinding.ItemStringBinding
+import dzmitryk.codepractice.recyclerview.utils.SpacingItemDecorator
 
 /**
  * A fragment representing a list of Items.
@@ -84,21 +84,6 @@ class FilterFragment : Fragment() {
     }
 
     companion object {
-
-        private class SpacingItemDecorator(private val spacing: Int) :
-            RecyclerView.ItemDecoration() {
-            override fun getItemOffsets(
-                outRect: Rect,
-                view: View,
-                parent: RecyclerView,
-                state: RecyclerView.State
-            ) {
-                outRect.left = spacing
-                outRect.right = spacing
-                outRect.top = spacing
-                outRect.bottom = spacing
-            }
-        }
 
         private class FilterListAdapter() : ListAdapter<FilterItem, ItemViewHolder>(ITEM_CALLBACK) {
 
