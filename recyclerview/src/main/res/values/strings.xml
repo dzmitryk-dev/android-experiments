@@ -2,6 +2,7 @@
     <string name="app_name">RecyclerViewDemo</string>
 
     <string name="filter_fragment_name">Filter</string>
+    <string name="add_item">Add item</string>
 
     <string-array name="items">
         <item>Item 1</item>
