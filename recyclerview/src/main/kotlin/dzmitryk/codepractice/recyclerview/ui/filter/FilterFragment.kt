@@ -1,62 +1,110 @@
 package dzmitryk.codepractice.recyclerview.ui.filter
 
+import android.graphics.Rect
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dzmitryk.codepractice.recyclerview.R
-import dzmitryk.codepractice.recyclerview.ui.filter.placeholder.PlaceholderContent
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import dzmitryk.codepractice.recyclerview.databinding.FragmentFilterBinding
+import dzmitryk.codepractice.recyclerview.databinding.ItemStringBinding
 
 /**
  * A fragment representing a list of Items.
  */
 class FilterFragment : Fragment() {
-
-    private var columnCount = 1
+    private var _binding: FragmentFilterBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: FilterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        arguments?.let {
-            columnCount = it.getInt(ARG_COLUMN_COUNT)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_filter_list, container, false)
+    ): View {
+        _binding = FragmentFilterBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = FilterItemRecyclerViewAdapter(PlaceholderContent.ITEMS)
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val adapter = FilterListAdapter()
+        binding.list.apply {
+            layoutManager = LinearLayoutManager(context)
+            this.adapter = adapter
+            addItemDecoration(SpacingItemDecorator(16))
         }
-        return view
+
+        viewModel.items.observe(viewLifecycleOwner) { items ->
+            adapter.submitList(items)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
 
-        // TODO: Customize parameter argument names
-        const val ARG_COLUMN_COUNT = "column-count"
-
-        // TODO: Customize parameter initialization
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            FilterFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
-                }
+        private class SpacingItemDecorator(private val spacing: Int) :
+            RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(
+                outRect: Rect,
+                view: View,
+                parent: RecyclerView,
+                state: RecyclerView.State
+            ) {
+                outRect.left = spacing
+                outRect.right = spacing
+                outRect.top = spacing
+                outRect.bottom = spacing
             }
+        }
+
+        private class FilterListAdapter() : ListAdapter<String, ItemViewHolder>(ITEM_CALLBACK) {
+
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+                val binding = ItemStringBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                return ItemViewHolder(binding)
+            }
+
+            override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+                holder.bind(getItem(position))
+            }
+        }
+
+        private val ITEM_CALLBACK = object : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+                return oldItem == newItem
+            }
+        }
+
+        private class ItemViewHolder(
+            private val binding: ItemStringBinding
+        ) : RecyclerView.ViewHolder(binding.root) {
+
+            fun bind(text: String) {
+                binding.itemText.text = text
+            }
+        }
+
     }
 }
