@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DiffUtil
@@ -47,11 +48,39 @@ class FilterFragment : Fragment() {
         viewModel.items.observe(viewLifecycleOwner) { items ->
             adapter.submitList(items)
         }
+
+        binding.fabAdd.setOnClickListener {
+            showFilterDialog()
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showFilterDialog() {
+        val availableFilters = viewModel.getAvailableFilters()
+        val filterNames = availableFilters.map { "${it.name} ${it.emoji}" }.toTypedArray()
+        val currentSelectedSet = viewModel.selectedFilters.value ?: emptySet()
+        val checkedItems = availableFilters.map { it in currentSelectedSet }.toBooleanArray()
+        val selectedSet = currentSelectedSet.toMutableSet()
+
+        AlertDialog.Builder(requireContext())
+            .setTitle("Select Filter Types")
+            .setMultiChoiceItems(filterNames, checkedItems) { _, which, isChecked ->
+                if (isChecked) {
+                    selectedSet.add(availableFilters[which])
+                } else {
+                    selectedSet.remove(availableFilters[which])
+                }
+            }
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+                viewModel.updateFilters(selectedSet)
+            }
+            .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 
     companion object {

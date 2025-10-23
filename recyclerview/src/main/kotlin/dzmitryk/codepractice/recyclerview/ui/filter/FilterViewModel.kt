@@ -17,6 +17,9 @@ class FilterViewModel : ViewModel() {
     private val _items = MutableLiveData<List<FilterItem>>()
     val items: LiveData<List<FilterItem>> = _items
 
+    private val _selectedFilters = MutableLiveData<Set<FilterItemType>>(emptySet())
+    val selectedFilters: LiveData<Set<FilterItemType>> = _selectedFilters
+
     init {
         generateItems()
     }
@@ -39,5 +42,23 @@ class FilterViewModel : ViewModel() {
             }
             _items.value = data
         }
+    }
+
+    fun updateFilters(filters: Set<FilterItemType>) {
+        _selectedFilters.value = filters
+        filterItems(filters)
+    }
+
+    private fun filterItems(filters: Set<FilterItemType>){
+        viewModelScope.launch {
+            val filterData = withContext(Dispatchers.Default) {
+                data.filterNot { it.type in filters }
+            }
+            _items.value = filterData
+        }
+    }
+
+    fun getAvailableFilters(): List<FilterItemType> {
+        return FilterItemType.entries.toList()
     }
 }
