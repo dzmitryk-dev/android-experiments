@@ -71,7 +71,7 @@ class FilterFragment : Fragment() {
             }
         }
 
-        private class FilterListAdapter() : ListAdapter<String, ItemViewHolder>(ITEM_CALLBACK) {
+        private class FilterListAdapter() : ListAdapter<FilterItem, ItemViewHolder>(ITEM_CALLBACK) {
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
                 val binding = ItemStringBinding.inflate(
@@ -87,12 +87,12 @@ class FilterFragment : Fragment() {
             }
         }
 
-        private val ITEM_CALLBACK = object : DiffUtil.ItemCallback<String>() {
-            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+        private val ITEM_CALLBACK = object : DiffUtil.ItemCallback<FilterItem>() {
+            override fun areItemsTheSame(oldItem: FilterItem, newItem: FilterItem): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+            override fun areContentsTheSame(oldItem: FilterItem, newItem: FilterItem): Boolean {
                 return oldItem == newItem
             }
         }
@@ -101,8 +101,8 @@ class FilterFragment : Fragment() {
             private val binding: ItemStringBinding
         ) : RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(text: String) {
-                binding.itemText.text = text
+            fun bind(item: FilterItem) {
+                binding.itemText.text = "${item.type.emoji} ${item.text}"
             }
         }
 
