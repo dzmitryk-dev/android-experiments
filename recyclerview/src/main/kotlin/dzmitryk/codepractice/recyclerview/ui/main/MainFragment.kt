@@ -21,7 +21,8 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
 
         enum class Screens(@StringRes val titleResId: Int) {
-            FILTER(R.string.filter_fragment_name)
+            FILTER(R.string.filter_fragment_name),
+            PAGING(R.string.paging_fragment_name)
         }
     }
 
@@ -54,8 +55,11 @@ class MainFragment : Fragment() {
     }
 
     private fun handleScreenNavigation(screen: Screens) {
-        if (screen == Screens.FILTER) {
-            findNavController().navigate(R.id.action_mainFragment_to_filterFragment)
+        findNavController().let { navController ->
+            when(screen) {
+                Screens.FILTER -> navController.navigate(R.id.action_mainFragment_to_filterFragment)
+                Screens.PAGING -> navController.navigate(R.id.action_mainFragment_to_pagingFragment)
+            }
         }
     }
 
