@@ -1,62 +1,97 @@
 package dzmitryk.codepractice.recyclerview.ui.paging
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dzmitryk.codepractice.recyclerview.R
-import dzmitryk.codepractice.recyclerview.ui.paging.placeholder.PlaceholderContent
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import dzmitryk.codepractice.recyclerview.databinding.FragmentPagingBinding
+import dzmitryk.codepractice.recyclerview.databinding.ItemStringBinding
+import dzmitryk.codepractice.recyclerview.utils.SpacingItemDecorator
+import kotlinx.coroutines.launch
 
 /**
- * A fragment representing a list of Items.
+ * A fragment representing a list of Items with pagination.
  */
 class PagingFragment : Fragment() {
 
-    private var columnCount = 1
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        arguments?.let {
-            columnCount = it.getInt(ARG_COLUMN_COUNT)
-        }
-    }
+    private var _binding: FragmentPagingBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: PagingViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_paging_list, container, false)
+    ): View {
+        _binding = FragmentPagingBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = PagingRecyclerViewAdapter(PlaceholderContent.ITEMS)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val adapter = PagingListAdapter()
+        binding.list.apply {
+            layoutManager = LinearLayoutManager(context)
+            this.adapter = adapter
+            addItemDecoration(SpacingItemDecorator(16))
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.items.collect { pagingData ->
+                adapter.submitData(pagingData)
             }
         }
-        return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
 
-        // TODO: Customize parameter argument names
-        const val ARG_COLUMN_COUNT = "column-count"
+        private class PagingListAdapter : PagingDataAdapter<String, StringViewHolder>(ITEM_CALLBACK) {
 
-        // TODO: Customize parameter initialization
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            PagingFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StringViewHolder {
+                val binding = ItemStringBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                return StringViewHolder(binding)
+            }
+
+            override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
+                holder.bind(getItem(position))
+            }
+        }
+
+        private val ITEM_CALLBACK = object : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+                return oldItem == newItem
+            }
+        }
+
+        private class StringViewHolder(
+            private val binding: ItemStringBinding,
+        ) : RecyclerView.ViewHolder(binding.root) {
+
+            fun bind(item: String?) {
+                if (item != null) {
+                    binding.itemText.text = item
                 }
             }
+        }
     }
 }
