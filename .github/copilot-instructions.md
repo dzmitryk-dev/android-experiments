@@ -15,8 +15,10 @@ This is a **Gradle composite build monorepo** containing multiple independent An
   - `helloshaders` - Android app with shader experiments
   - `whitenoiseapp` - Android app with white noise functionality
   - `hellodreamservice` - Android app with dream service
-  - `hellojetpackcompose` - Android app with Jetpack Compose (not auto-included in composite)
+  - `hellojetpackcompose` - Android app with Jetpack Compose
   - `MemeViewer` - Android app with meme browsing (Jetpack Compose, Paging, JSoup)
+  - `networkdiscoverydemo` - Android app with network discovery functionality
+  - `recyclerview` - Android app with RecyclerView examples
 
 Each included build has its own:
 - `settings.gradle` - Local configuration
@@ -261,16 +263,32 @@ android-experiments/
 │   ├── gradlew / gradlew.bat
 │   └── src/
 │
-└── MemeViewer/               # Flat single-module app structure
-    ├── settings.gradle.kts
-    ├── build.gradle.kts
-    ├── src/
-    │   ├── main/
-    │   ├── test/
-    │   └── androidTest/
-    ├── proguard-rules.pro
-    ├── README.md
-    └── gradle/
+├── MemeViewer/               # Flat single-module app structure
+│   ├── settings.gradle.kts
+│   ├── build.gradle.kts
+│   ├── src/
+│   │   ├── main/
+│   │   ├── test/
+│   │   └── androidTest/
+│   ├── proguard-rules.pro
+│   ├── README.md
+│   └── gradle/
+│
+├── networkdiscoverydemo/     # Network discovery demo app
+│   ├── settings.gradle.kts
+│   ├── build.gradle.kts
+│   ├── src/
+│   │   ├── main/
+│   │   ├── test/
+│   │   └── androidTest/
+│   ├── proguard-rules.pro
+│   └── gradle/
+│
+└── recyclerview/             # RecyclerView examples
+    ├── settings.gradle
+    ├── build.gradle
+    ├── gradlew / gradlew.bat
+    └── src/
 ```
 
 ## When Making Changes
