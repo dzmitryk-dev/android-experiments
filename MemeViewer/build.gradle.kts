@@ -33,8 +33,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
     }
     buildFeatures {
         compose = true
@@ -52,7 +54,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.jsoup)
     implementation(libs.timber)
-    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.runtime.ktx)
     implementation(libs.androidx.paging.compose)
     implementation(libs.coil.compose)
 
