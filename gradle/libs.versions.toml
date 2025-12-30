@@ -9,7 +9,7 @@ lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.12.2"
 composeBom = "2025.12.01"
 hilt = "2.57.2"
-ksp = "2.2.20-2.0.4"
+ksp = "2.3.4"
 jsoup = "1.21.2"
 assertj = "3.27.6"
 mockitoCore = "5.21.0"
@@ -28,7 +28,7 @@ navigation = "2.9.6"
 activity = "1.12.2"
 coroutinesTest = "1.10.2"
 turbine = "1.2.1"
-coil = "2.6.0"
+coil = "2.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
