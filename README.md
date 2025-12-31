@@ -1,4 +1,7 @@
 # AndroidExperiments
+
+[![Build](https://github.com/dzmitryk-dev/android-experiments/actions/workflows/build.yml/badge.svg)](https://github.com/dzmitryk-dev/android-experiments/actions/workflows/build.yml)
+
 Collection of my experiments with Android platform
 
 ## Composite multi-project setup
