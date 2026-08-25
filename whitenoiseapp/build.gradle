@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.github.dzkoirn.whitenoiseapp'
-    compileSdk 33
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.github.dzkoirn.whitenoiseapp"
         minSdk 29
-        targetSdk 33
+        targetSdk 36
         versionCode 1
         versionName "1.0"
 
@@ -33,10 +33,9 @@ android {
 }
 
 dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.lifecycle.runtime.ktx
 
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
-
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
 }
