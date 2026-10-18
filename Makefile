@@ -11,7 +11,7 @@
 # add a subproject: PROJECTS and the includeBuild line in settings.gradle.
 
 GRADLE     ?= ./gradlew
-PROJECTS   := memeviewer hellojetpackcompose helloshaders hellodreamservice networkdiscoverydemo recyclerview whitenoiseapp
+PROJECTS   := memeviewer hellojetpackcompose helloshaders hellodreamservice networkdiscoverydemo recyclerview whitenoiseapp mytimetable
 
 .DEFAULT_GOAL := help
 

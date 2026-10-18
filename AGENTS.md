@@ -57,6 +57,7 @@ android-experiments/                # Repository root
 | `networkdiscoverydemo/` | `network.discovery.demo` | Network discovery over Compose. |
 | `recyclerview/` | `dzmitryk.codepractice.recyclerview` | Views + Paging + Navigation examples. |
 | `whitenoiseapp/` | `com.github.dzkoirn.whitenoiseapp` | White-noise audio app. |
+| `mytimetable/` | `com.github.dzkoirn.mytimetable` | "My Timetable" trip planning app. Empty Compose shell for now. |
 
 Each project has its own `AGENTS.md` with project-specific notes.
 
